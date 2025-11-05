@@ -1,0 +1,167 @@
+:root {
+  --bg: #0e1117;
+  --fg: #f5f5f5;
+  --accent: #58a6ff;
+  --accent-light: #79c0ff;
+  --muted: #9da3ad;
+  --font: "Inter", system-ui, sans-serif;
+  --transition: 0.4s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: radial-gradient(circle at top, #1b2330, #0e1117);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  text-align: center;
+}
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content {
+  max-width: 600px;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+.icon {
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-light);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.count span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-light);
+}
+
+.count small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.notify {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.notify input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #2d333b;
+  border-radius: 6px;
+  background-color: #161b22;
+  color: var(--fg);
+  width: 60%;
+}
+
+.notify button {
+  padding: 0.75rem 1.2rem;
+  border: none;
+  background-color: var(--accent);
+  color: var(--bg);
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 1rem;
+  border-top: 1px solid #1f2937;
+}
+
+/* When countdown ends */
+.finished #countdown {
+  opacity: 0.3;
+}
+
+.finished #end-message {
+  color: var(--accent-light);
+  font-weight: bold;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .countdown {
+    gap: 1rem;
+  }
+}
