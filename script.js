@@ -1,6 +1,5 @@
-// Countdown target — 72 hours from now
-const countdownDuration = 72 * 60 * 60 * 1000; // 72 hours in ms
-const targetDate = new Date().getTime() + countdownDuration;
+// Countdown target — Monday, November 10, 2025, at 12:00 AM
+const targetDate = new Date("November 10, 2025 00:00:00");
 
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
@@ -11,7 +10,7 @@ const content = document.querySelector(".content");
 
 function updateCountdown() {
   const now = new Date().getTime();
-  const distance = targetDate - now;
+  const distance = targetDate.getTime() - now;
 
   if (distance <= 0) {
     clearInterval(timer);
